@@ -1,6 +1,4 @@
-class Article < ApplicationRecord
-    include Visible
-    
+class Article < ApplicationRecord    
     has_many :comments, dependent: :destroy
     
     validates :title, presence: true 
