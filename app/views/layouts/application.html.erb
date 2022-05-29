@@ -8,9 +8,16 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "styles.css" %>
   </head>
 
   <body>
+  <button><%= link_to "home", root_path %></button>
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
     <%= yield %>
   </body>
 </html>

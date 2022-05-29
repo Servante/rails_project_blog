@@ -18,8 +18,10 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
+      flash[:success] = "Post Saved!"
       redirect_to @article
     else
+      flash.now[:error] = "Could not save post"
       render :new, status: :unprocessable_entity
     end
   end
